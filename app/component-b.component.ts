@@ -13,12 +13,12 @@ import { LoggedService } from './service';
 export class ComponentB {
   constructor(private ls: LoggedService) {
     this.ls.getLogged().subscribe(data => {
-      console.log('received ' + data);
+      console.log('Component B received value ' + data);
     });
   }
 
   login(text: any): void {
-    console.info('Setting ' + text + ' Component B');
+    console.info('Setting value ' + text + ' Component B');
     this.ls.setLogged(text);
   }
 }

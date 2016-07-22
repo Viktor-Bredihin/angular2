@@ -12,13 +12,12 @@ import { ComponentB } from './component-b.component';
     <component-a></component-a>
     <component-b></component-b>
   `,
-  directives: [ComponentA, ComponentB],
-  providers: [LoggedService]
+  directives: [ComponentA, ComponentB]
 })
 export class AppComponent {
   constructor(private ls: LoggedService) {
     this.ls.getLogged().subscribe(data => {
-      console.log('received ' + data);
+      console.log('App received ' + data);
     });
   }
 

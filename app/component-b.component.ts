@@ -7,13 +7,12 @@ import { LoggedService } from './service';
     <h1>Component B</h1>
     <input #text type="text" />
     <button (click)="login(text.value)">Send</button>
-  `,
-  providers: [LoggedService]
+  `
 })
 export class ComponentB {
   constructor(private ls: LoggedService) {
     this.ls.getLogged().subscribe(data => {
-      console.log('received ' + data);
+      console.log('B received ' + data);
     });
   }
 

@@ -17,12 +17,12 @@ import { ComponentB } from './component-b.component';
 export class AppComponent {
   constructor(private ls: LoggedService) {
     this.ls.getLogged().subscribe(data => {
-      console.log('App received ' + data);
+      console.log('Component App received value ' + data);
     });
   }
 
   login(text: any): void {
-    console.info('Setting ' + text + ' Component App');
+    console.info('Setting value ' + text + ' Component App');
     this.ls.setLogged(text);
   }
 }

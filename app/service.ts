@@ -7,6 +7,12 @@ import 'rxjs/add/operator/share';
 export class LoggedService {
   private subject: Subject<string> = new Subject<string>();
 
+  constructor() {
+      this.getLogged().subscribe(data => {
+        console.log('service got new value');
+      })
+  }
+
   setLogged(logged: string): void {
     this.subject.next(logged);
   }
